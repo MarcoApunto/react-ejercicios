@@ -1,12 +1,22 @@
 {
   "name": "react-ejercicios",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "Monorepo de ejercicios en React",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No hay pruebas configuradas\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "workspaces": [
+    "ejercicios/*"
+  ],
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "prettier": "^3.1.0"
+  },
+  "keywords": ["monorepo", "react", "ejercicios"],
+  "author": "MarcoApunto"
 }
