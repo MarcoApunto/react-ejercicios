@@ -5,6 +5,8 @@ build/
 
 .env
 
-proyectos/*/node_modules/
-proyectos/*/dist/
-proyectos/*/build/
+node_modules/
+
+ejercicios/*/node_modules/
+ejercicios/*/dist/
+ejercicios/*/build/
