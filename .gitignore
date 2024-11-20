@@ -1,0 +1,10 @@
+node_modules/
+
+dist/
+build/
+
+.env
+
+proyectos/*/node_modules/
+proyectos/*/dist/
+proyectos/*/build/
