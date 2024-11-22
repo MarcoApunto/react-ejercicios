@@ -1,0 +1,29 @@
+export function SelectCity({id, name, value}) {
+	return (
+		<select
+		id={id}
+		name={name}
+		>
+			<option
+			value={value}
+			>
+				Alicante
+			</option>
+			<option
+			value={value}
+			>
+				Madrid
+			</option>
+			<option
+			value={value}
+			>
+				Sevilla
+			</option>
+			<option
+			value={value}
+			>
+				Valencia
+			</option>
+		</select>
+	)
+}
