@@ -2,15 +2,15 @@
 
 ## 1. Formulario de Registro Simple: 
 
-1. Crea un componente funcional llamado RegistrationForm que:
+1. Crea un componente funcional llamado RegistrationForm que: ✅
 
-2. Inicialice el estado para dos campos de entrada: "nombre de usuario" y "correo electrónico", ambos comenzando como cadenas vacías.
+2. Inicialice el estado para dos campos de entrada: "nombre de usuario" y "correo electrónico", ambos comenzando como cadenas vacías. ✅
 
-3. Tenga un formulario con dos campos de entrada y un botón de envío.
+3. Tenga un formulario con dos campos de entrada y un botón de envío. ✅
 
-4. Actualice el estado correspondiente cada vez que el usuario escriba en uno de los campos de entrada.
+4. Actualice el estado correspondiente cada vez que el usuario escriba en uno de los campos de entrada.✅
 
-5. Muestre los valores actuales de "nombre de usuario" y "correo electrónico" debajo del formulario en tiempo real.
+5. Muestre los valores actuales de "nombre de usuario" y "correo electrónico" debajo del formulario en tiempo real.✅
 
 Requisitos:
 
