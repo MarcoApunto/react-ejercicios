@@ -24,7 +24,7 @@ export default function Form() {
 			<SelectCity id="city" name="city"></SelectCity>
 			<br />
 			<br />
-			<label for="descripcion">Description: </label>
+			<label for="description">Description: </label>
 			<TextAreaTemplate id={"description"} name={"description"} rows={"6"} cols={"60"}></TextAreaTemplate>
 			<br />
 			<br />
