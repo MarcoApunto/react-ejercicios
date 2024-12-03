@@ -27,19 +27,21 @@ export default function TasksList({ stackTask, setStackTask }) {
             {
               editTask === i ? (
                 <>
-                  <input
-                    style={{ margin: "5px" }}
-                    type="text"
-                    value={newValue}
-                    onChange={(e) => setNewValue(e.target.value)}
-                    autoFocus
-                  />
-                  <button
-                  style={{ margin: '5px' }}
-                  onClick={() => saveEditedTask(i)}
-                  >
-                    Save ✔
-                  </button>
+                  <form>
+                    <input
+                      style={{ margin: "5px" }}
+                      type="text"
+                      value={newValue}
+                      onChange={(e) => setNewValue(e.target.value)}
+                      autoFocus
+                    />
+                    <button
+                      style={{ margin: '5px' }}
+                      onClick={() => saveEditedTask(i)}
+                    >
+                      Save ✔
+                    </button>
+                  </form>
 
                 </>
               ) : (
