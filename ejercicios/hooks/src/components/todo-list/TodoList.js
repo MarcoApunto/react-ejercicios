@@ -20,6 +20,7 @@ export default function FormNewTask() {
           <input type="text" placeholder="Task" value={task} onChange={handleChange} autoFocus />
           <p>
             <button
+            className="Button--new"
               onClick={(e) => {
                 e.preventDefault()
                 setStackTask([{ task: task }, ...stackTask])

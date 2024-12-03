@@ -36,7 +36,7 @@ export default function TasksList({ stackTask, setStackTask }) {
                       autoFocus
                     />
                     <button
-                      style={{ margin: '5px' }}
+                      className="Button--save"
                       onClick={() => saveEditedTask(i)}
                     >
                       Save ✔
@@ -47,17 +47,21 @@ export default function TasksList({ stackTask, setStackTask }) {
               ) : (
                 <>
                   <p>{elem.task}</p>
+                  <div >
+                    <button
+                      className="Button--edit"
+                      onClick={() => editStartMode(i)}
+                    >
+                      Edit task 🖊
+                    </button>
 
-                  <button
-                    style={{ margin: '5px' }}
-                    onClick={() => editStartMode(i)}
-                  >
-                    Edit task 🖊
-                  </button>
-
-                  <button onClick={() => setStackTask(stackTask.filter((_, index) => index !== i))}>
-                    Delete task 🗑
-                  </button>
+                    <button
+                      className="Button--delete"
+                      onClick={() => setStackTask(stackTask.filter((_, index) => index !== i))}
+                    >
+                      Delete task 🗑
+                    </button>
+                  </div>
                 </>
               )
             }

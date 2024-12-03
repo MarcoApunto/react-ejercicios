@@ -6,13 +6,17 @@ function App() {
   return (
     <div className="App">
       <main>
-        <section>
-          <h2>Form con useState</h2>
-          <RegistrationForm />
+        <section className='SimpleForm'>
+          <div className='SimpleForm-container'>
+            <h2>Simple Form with useState</h2>
+            <RegistrationForm />
+          </div>
         </section>
-        <section>
-          <h2>ToDo List with useState</h2>
-          <TodoList />
+        <section className='TodoList'>
+          <div className='TodoList-container'>
+            <h2>ToDo-List with useState && LocalStorage with useEffect</h2>
+            <TodoList />
+          </div>
         </section>
       </main>
     </div>

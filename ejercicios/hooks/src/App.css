@@ -32,7 +32,161 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.SimpleForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SimpleForm-container {
+  margin: 20px;
+  padding: 50px;
+  background: #D9FFF5;
+  justify-content: center;
+  border-radius: 7%;
+  color: #6B8F71;
+}
+
+.TodoList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TodoList-container {
+  margin: 20px;
+  padding: 50px;
+  background: #D9FFF5;
+  justify-content: center;
+  border-radius: 4%;
+  color: #6B8F71;
+}
+/*
+background #1D1E18
+
+P1: #6B8F71
+P2: #AAD2BA
+P3: #D9FFF5
+P4: #B9F5D8
+*/
+input {
+  color: #1D1E18;
+  background-color: #D9FFF5;
+  border-style: none none solid none;
+  border-color: #6B8F71;
+  border-width: 2px;
+  outline: none;
+}
+
+
+/* Buttons NEW */
+.Button--new {
+  padding: 7px;
+  background-color: #B9F5D8;
+  color: #6B8F71;
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 2px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.Button--new:hover {
+  border-radius: 20px;
+  background: #006ee6;
+  color: #ffffff;
+  box-shadow: 0 0 5px #004999,
+    0 0 5px #0055b350,
+    0 0 10px #0062cc50,
+    0 0 15px #006ee650;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+
+/* Buttons EDIT */
+.Button--edit {
+  padding: 7px;
+  background-color: #B9F5D8;
+  color: #6B8F71;
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.Button--edit:hover {
+  background: #ff7e00;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 5px #f5973d,
+    0 0 5px #ff751450,
+    0 0 10px #ec7c2650,
+    0 0 15px #f5962250;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Buttons DELETE */
+.Button--delete {
+  padding: 7px;
+  background-color: #B9F5D8;
+  color: #6B8F71;
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-left: 5px;
+
+}
+
+.Button--delete:hover {
+  background: #e61919;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 5px #ec5353,
+    0 0 5px #f8000050,
+    0 0 10px #ff230150,
+    0 0 15px #f5402150;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Buttons SAVE */
+.Button--save {
+  padding: 5px;
+  background-color: #B9F5D8;
+  color: #6B8F71;
+  font-weight: bold;
+  border-style: solid;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-right: 1px;
+}
+
+.Button--save:hover {
+  background: #008f39;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 5px #308446,
+    0 0 5px #00913f50,
+    0 0 10px #28723350,
+    0 0 15px #4c914150;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
