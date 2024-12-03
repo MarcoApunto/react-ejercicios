@@ -19,11 +19,6 @@ export default function TasksList({ stackTask, setStackTask }) {
     setEditTask(null)
   }
 
-  function editCancel() {
-    setEditTask(null)
-    setNewValue('');
-  }
-
   return (
     <>
       {
@@ -37,6 +32,7 @@ export default function TasksList({ stackTask, setStackTask }) {
                     type="text"
                     value={newValue}
                     onChange={(e) => setNewValue(e.target.value)}
+                    autoFocus
                   />
                   <button
                   style={{ margin: '5px' }}
@@ -45,11 +41,6 @@ export default function TasksList({ stackTask, setStackTask }) {
                     Save ✔
                   </button>
 
-                  <button
-                  onClick={editCancel}
-                  >
-                    Cancel ✖
-                  </button>
                 </>
               ) : (
                 <>

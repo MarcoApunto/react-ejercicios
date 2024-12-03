@@ -19,6 +19,7 @@ export default function FormNewTask() {
               onClick={(e) => {
                 e.preventDefault()
                 setStackTask([{ task: task }, ...stackTask])
+                setTask('')
               }}
             >
               New Task
