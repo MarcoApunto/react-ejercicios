@@ -1,6 +1,6 @@
 import './App.css'
-import RegistrationForm from './components/RegistrationForm'
-import TodoList from './components/TodoList'
+import RegistrationForm from './components/simple-form/RegistrationForm'
+import TodoList from './components/todo-list/TodoList'
 
 function App() {
   return (

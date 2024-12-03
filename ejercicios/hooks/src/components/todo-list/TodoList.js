@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import TasksList from './TasksLists'
 
 export default function FormNewTask() {
   const [task, setTask] = useState('')
-  const [stackTask, setStackTask] = useState([])
+  const [stackTask, setStackTask] = useState((JSON.parse(localStorage.getItem("tasks")) || []))
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(stackTask))
+  }, [stackTask])
 
   const handleChange = (e) => {
     setTask(e.target.value)
