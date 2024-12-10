@@ -6,9 +6,8 @@ export function PokeList() {
 
   return (
     <>
-      
       <img
-        src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : ""}
+        src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : "/imgs/img_not_available.png"}
         alt={searchPoke.name}>
       </img>
       <h2>{searchPoke.name}</h2>
