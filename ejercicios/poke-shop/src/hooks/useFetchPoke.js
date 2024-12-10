@@ -5,11 +5,10 @@ export const useFetchPoke = () => {
 
   useEffect(() => {
     const fetchArr = async () => {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=5`)
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=9`)
       const data = await res.json()
 
-
-      setSpecPoke(data.results.map(re => ([re.name, re.url])).sort())
+      setSpecPoke(data.results.map(re => (re.name)).sort())
     }
 
     fetchArr()

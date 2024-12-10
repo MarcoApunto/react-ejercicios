@@ -1,14 +1,14 @@
 import { FetchingPokeProvider } from './context/FetchingPokemon';
 import { PokeList } from './components/PokeList'
-import { useFetchPoke } from './hooks/useFetchPoke';
 import './App.css';
 
 
 function App() {
-  const [specificPokemon] = useFetchPoke();
+/*   const [specificPokemon] = useFetchPoke();
 
   if (specificPokemon)
-    console.log("dentro de App: ", specificPokemon)
+    specificPokemon.map(elem => console.log("dentro de App: ", elem)) */
+    
 
   return (
     <FetchingPokeProvider>
