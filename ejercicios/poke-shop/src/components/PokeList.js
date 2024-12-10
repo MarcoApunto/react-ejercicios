@@ -1,37 +1,35 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useFetchPoke } from '../hooks/useFetchPoke';
-import { FetchingPokeContext } from '../context/FetchingPokemon';
+import { ActualPokemon } from "./ActualPokemon";
+import { FetchingPokeContext } from "../context/FetchingPokemon";
 
 export function PokeList() {
-  const { searchPoke, setPoke } = useContext(FetchingPokeContext)
-  const [specificPokemon] = useFetchPoke();
+  const { setPoke } = useContext(FetchingPokeContext)
+  const [specPokemon] = useFetchPoke()
+
+  /* Si cambio la posicion del @param specPokemon, me muestra solamente ese pokemon
+  Pero enseña tantas veces de largo es el endpoint limit */
+  useEffect(() => {
+    if (specPokemon) {
+      setPoke(specPokemon[3])
+    console.log(specPokemon)}
+  })
 
   return (
     <section>
-      {specificPokemon
-        ? specificPokemon.map((elem) => (
+      {specPokemon?.map((_, i) => (
+        <div key={i}>
+          <ActualPokemon />
+        </div>
+      ))}
+    </section>
+  )
+}
 
-          <div>
-            {setPoke(elem)}
-            <img
+/* <img
               src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : "/imgs/img_not_available.png"}
               alt={searchPoke.name}
             >
             </img>
             <h2>{searchPoke.name}</h2>
-            <button type="button" value="Gotcha!">Gotcha!</button>
-          </div>
-        ))
-        : <div><img
-          src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : "/imgs/img_not_available.png"}
-          alt={searchPoke.name}
-        >
-        </img>
-          <h2>{searchPoke.name}</h2>
-          <button type="button" value="Gotcha!">Gotcha!</button>
-        </div>
-      }
-    </section>
-
-  )
-}
+            <button type="button" value="Gotcha!">Gotcha!</button> */

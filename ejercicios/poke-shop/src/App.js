@@ -4,11 +4,6 @@ import './App.css';
 
 
 function App() {
-/*   const [specificPokemon] = useFetchPoke();
-
-  if (specificPokemon)
-    specificPokemon.map(elem => console.log("dentro de App: ", elem)) */
-    
 
   return (
     <FetchingPokeProvider>
