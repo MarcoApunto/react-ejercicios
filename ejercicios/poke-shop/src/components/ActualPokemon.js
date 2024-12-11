@@ -1,18 +1,21 @@
-import { useContext } from "react"
-import { FetchingPokeContext } from "../context/FetchingPokemon"
+import { useEffect, useState } from "react";
 
-export function ActualPokemon() {
-    const { searchPoke } = useContext(FetchingPokeContext)
+export function ActualPokemon({ pokemon, addToCart }) {
+    const [price, setPrice] = useState()
+
+    useEffect(() => {
+        const randomPrice = Math.floor(Math.random() * (10 - 2) + 1)
+        setPrice(randomPrice)
+    }, [])
 
     return (
         <>
             <img
-                src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : "/imgs/img_not_available.png"}
-                alt={searchPoke.name}
-            >
-            </img>
-            <h2>{searchPoke.name}</h2>
-            <button type="button" value="Gotcha!">Gotcha!</button>
+                src={pokemon.sprites ? pokemon.sprites.other.home.front_default : "/imgs/img_not_available.png"}
+                alt={pokemon.name}
+            />
+            <h2>{pokemon.name} - {price}€</h2>
+            <button className="button-70" onClick={() => addToCart(pokemon, price)} type="button">Gotcha!</button>
         </>
-    )
+    );
 }

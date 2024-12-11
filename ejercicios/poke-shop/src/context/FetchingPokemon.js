@@ -1,25 +1,31 @@
-import React from "react";
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const FetchingPokeContext = createContext();
 
 export const FetchingPokeProvider = ({ children }) => {
-	const [searchPoke, setSearchPoke] = useState([])
-	const [poke, setPoke] = useState("pikachu")
+  const [pokemonList, setPokemonList] = useState([]);
 
-	useEffect(() => {
-		const getSomePoke = async () => {
-			const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
-			const data = await res.json()
-			
-			setSearchPoke(data)
-		}
-		getSomePoke()
-	}, [poke])
+  useEffect(() => {
+    const fetchPokemonList = async () => {
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=20&limit=5`);
+      const data = await res.json();
+      
+      const pokemonDetails = await Promise.all(
+        data.results.map(async (pokemon) => {
+          const res = await fetch(pokemon.url);
+          return res.json();
+        })
+      );
+      
+      setPokemonList(pokemonDetails);
+    };
+    
+    fetchPokemonList();
+  }, []);
 
-	return (
-		<FetchingPokeContext.Provider value={{ searchPoke, setPoke }}>
-			{children}
-		</FetchingPokeContext.Provider>
-	)
-}
+  return (
+    <FetchingPokeContext.Provider value={{ pokemonList }}>
+      {children}
+    </FetchingPokeContext.Provider>
+  );
+};

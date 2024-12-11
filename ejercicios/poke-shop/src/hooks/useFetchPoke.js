@@ -1,18 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from "react"
 
 export const useFetchPoke = () => {
-  const [specPokemon, setSpecPoke] = useState();
+    const [cart, setCart] = useState([])
 
-  useEffect(() => {
-    const fetchArr = async () => {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=20&limit=5`)
-      const data = await res.json()
+    const handleAddToproductList = (addCart) => {
+        setCart([...cart, addCart])
+    };
 
-      setSpecPoke(data.results.map(re => (re.name)).sort())
-    }
-
-    fetchArr()
-  }, [])
-
-  return [specPokemon]
 }

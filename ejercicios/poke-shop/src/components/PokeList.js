@@ -1,35 +1,49 @@
-import { useContext, useEffect } from "react"
-import { useFetchPoke } from '../hooks/useFetchPoke';
+import { useContext, useState } from "react";
 import { ActualPokemon } from "./ActualPokemon";
 import { FetchingPokeContext } from "../context/FetchingPokemon";
+import { releaseOne } from '../utils/cartFunctions'
 
 export function PokeList() {
-  const { setPoke } = useContext(FetchingPokeContext)
-  const [specPokemon] = useFetchPoke()
+  const { pokemonList } = useContext(FetchingPokeContext);
+  const [cart, setCart] = useState([])
 
-  /* Si cambio la posicion del @param specPokemon, me muestra solamente ese pokemon
-  Pero enseña tantas veces de largo es el endpoint limit */
-  useEffect(() => {
-    if (specPokemon) {
-      setPoke(specPokemon[3])
-    console.log(specPokemon)}
-  })
+  const handleAddToproductList = (addCart, price) => {
+    if (cart.find(prod => prod.pokemon === addCart.name)) {
+      const newQuantity = cart.map(elem => elem.pokemon === addCart.name ? { ...cart, pokemon: elem.pokemon, quantity: elem.quantity + 1, price: elem.price } : elem)
+      return setCart([...newQuantity])
+    }
+    setCart([...cart, { pokemon: addCart.name, quantity: 1, price: price}])
+  }
 
   return (
-    <section>
-      {specPokemon?.map((_, i) => (
-        <div key={i}>
-          <ActualPokemon />
-        </div>
-      ))}
-    </section>
-  )
+    <>
+      <section>
+        {pokemonList.map((pokemon) => (
+          <div key={pokemon.id}>
+            <ActualPokemon pokemon={pokemon} addToCart={handleAddToproductList} />
+          </div>
+        ))}
+      </section>
+      <aside>
+        <h2>Caja de Pokemon </h2>
+        {cart ? (
+          cart.map((poke, i) => (
+            <>
+              <div key={i}>
+                {poke.pokemon} {poke.price}€ x {poke.quantity}
+                <br />
+                <button onClick={() => setCart(cart.filter((_, index) => index !== i))}>
+                  Liberar todos
+                </button>
+                <button onClick={() => releaseOne(poke, i, cart, setCart)}>
+                  Liberar 1
+                </button>
+              </div>
+              <br />
+            </>
+          )))
+          : ("")}
+      </aside >
+    </>
+  );
 }
-
-/* <img
-              src={searchPoke.sprites ? searchPoke.sprites.other.home.front_default : "/imgs/img_not_available.png"}
-              alt={searchPoke.name}
-            >
-            </img>
-            <h2>{searchPoke.name}</h2>
-            <button type="button" value="Gotcha!">Gotcha!</button> */
