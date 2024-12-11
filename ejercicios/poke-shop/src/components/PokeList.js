@@ -32,12 +32,13 @@ export function PokeList() {
               <div key={i}>
                 {poke.pokemon} {poke.price}€ x {poke.quantity}
                 <br />
-                <button onClick={() => setCart(cart.filter((_, index) => index !== i))}>
-                  Liberar todos
-                </button>
                 <button onClick={() => releaseOne(poke, i, cart, setCart)}>
                   Liberar 1
                 </button>
+                <button onClick={() => setCart(cart.filter((_, index) => index !== i))}>
+                  Liberar todos
+                </button>
+                
               </div>
               <br />
             </>
