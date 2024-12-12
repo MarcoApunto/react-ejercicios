@@ -7,7 +7,7 @@ function App() {
 
   return (
     <FetchingPokeProvider>
-      <div className="App">
+      <div className="Container">
         <h1>Poke (de Pokemon, no de poke hawaiano) Shop</h1>
         <PokeList />
       </div>
