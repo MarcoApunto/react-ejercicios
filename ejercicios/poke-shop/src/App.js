@@ -7,12 +7,19 @@ function App() {
 
   return (
     <FetchingPokeProvider>
-      <div className="Container">
-        <h1>Poke (de Pokemon, no de poke hawaiano) Shop</h1>
-        <PokeList />
-      </div>
+      <header>
+        <h1>Poke Shop
+          <br />
+          (de Pokemon, no de poke hawaiano)
+        </h1>
+        
+      </header>
+      <hr />
+      <PokeList />
     </FetchingPokeProvider>
   );
 }
 
 export default App;
+
+/*  */
