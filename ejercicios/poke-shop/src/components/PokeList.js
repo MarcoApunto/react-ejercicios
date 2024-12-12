@@ -32,9 +32,17 @@ export function PokeList() {
           </div>
         ))}
       </article>
-      <aside>
-        {cart && cart.length > 0 ? (
-          <>
+
+      {cart && cart.length > 0 ? (
+        <>
+          <aside>
+          {totalCart && cart.length > 0 ?
+              (<>
+                <div>
+                  <h2>Total: <span>{totalCart}€</span></h2>
+                </div>
+              </>)
+              : ("")}
             <h2>Caja de Pokemon </h2>
             {cart.map((poke, i) => (
               <>
@@ -42,12 +50,12 @@ export function PokeList() {
                   {poke.pokemon} {poke.price}€ x {poke.quantity}
                   <div>
                     <button onClick={() => releaseOne(poke, i, cart, setCart, totalCart, setTotalCart)}
-                    className="btn--remove"
+                      className="btn--remove"
                     >
                       ➖
                     </button>
                     <button onClick={() => setCart(cart.filter((_, index) => index !== i))}
-                    className="btn--delete"
+                      className="btn--delete"
                     >
                       ❌
                     </button>
@@ -56,16 +64,12 @@ export function PokeList() {
                 <br />
               </>
             ))}
-          </>
-        ) : ("")}
-        {totalCart && cart.length > 0 ?
-          (<>
-            <div>
-              <h2>Total: <span>{totalCart}€</span></h2>
-            </div>
-          </>)
-          : ("")}
-      </aside >
+            
+          </aside >
+        </>
+      ) : ("")}
+
+
     </main>
   );
 }

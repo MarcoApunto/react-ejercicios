@@ -1,122 +1,147 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-hollow');
+
 header {
 	background-image: url('../public/imgs/grass.png');
-	background-size: 350px;
+	background-size: 400px;
 	background-position: center;
 	height: 20vh;
+	display: flex;
 	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/*
-	NO TOCAR, TIENE LA ESTRUCTURA QUE QUIERO
-			|		HEADER		|
-			---------------------
-			|POKEMON	|	CART|
-*/
+h1 {
+	font-family: 'Pokemon Solid', sans-serif;
+	color: yellow;
+	font-size: 2.3rem;
+	-webkit-text-stroke-width: 1.5px;
+	-webkit-text-stroke-color: blue;
+
+}
+
 hr {
-	margin: auto;
-	padding: auto;
-	border: solid #40a839;
-	width: 100%;
-	height: 0.9px;
-	background: #40a839;
+	border: 0;
+	border-top: 1px solid #40a839;
+	margin: 20px 0;
 }
 
 .Container {
-	background-image: url(../public/imgs/leaf_background.png);
-	background-size: cover;
-	background-position: center;
-	height: 100%;
 	display: flex;
-	flex-direction: row;
+	flex: 1;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
+	gap: 20px;
+	padding: 20px;
+	overflow-y: auto;
+	flex-wrap: wrap;
 }
 
 article {
-
-	margin: 50px;
-	padding: 10px;
 	display: flex;
-	flex-basis: 70%;
-	flex-direction: row;
 	flex-wrap: wrap;
+	gap: 40px;
 	flex: 3;
+	margin: 20px;
+	justify-content: center;
+	align-items: flex-start;
 	min-height: 60vh;
-	align-items: center;
-	justify-content: space-evenly;
-	gap: 20px;
+	max-width: 70%;
 }
 
 article div {
-	padding: 10px;
+	backdrop-filter: blur(10px);
+	padding: 15px;
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	overflow-y: auto;
-	font-size: small;
-	color: #10ff0091;
-}
-
-aside {
-	margin: 50px;
-	flex-basis: 30%;
-	flex: 1;
-	min-height: 60vh;
-	justify-content: space-evenly;
-	gap: 20px;
-}
-
-aside h2 {
-	color: #10ff00ff;
-}
-
-aside div {
-	color: #10ff0091;
-}
-
-.cover-img {
-	background-image:
-		url('../public/imgs/grass.png'),
-		linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
-	background-size: cover;
-	background-position: center;
-	border-radius: 20px;
-	box-shadow: 0 4px 40px #0000004d;
-	overflow: hidden;
-}
-
-img {
-	width: 150px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+	color: #97cf7e;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	width: 200px;
 	height: auto;
 }
 
+aside {
+	flex: 1;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 20px;
+	margin: 20px;
+	border-radius: 10px;
+	min-height: 60vh;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+aside div {
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+aside div,
+aside h2 {
+
+	font-size: 1.4rem;
+	color: #fff;
+}
+
+aside h2 span {
+	font-weight: bold;
+	color: #ffcc00;
+}
+
+h2 {
+	color: #97cf7e;
+	font-size: 1.3rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cover-img {
+	background-image: url('../public/imgs/grass.png');
+	background-size: cover;
+	background-position: center;
+	border-radius: 10px;
+	width: 150px;
+	height: 150px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
 .button-70 {
-	background-image: linear-gradient(#b7d5ac, #6eaa5e);
-	border: 0;
+	background-color: #6eaa5e;
+	border: none;
 	border-radius: 4px;
-	box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
-	box-sizing: border-box;
-	color: #3f4b3a;
+	padding: 10px 20px;
+	color: white;
+	font-size: 1rem;
 	cursor: pointer;
-	font-family: Montserrat, sans-serif;
-	font-size: .9em;
-	margin: 5px;
-	padding: 10px 15px;
-	text-align: center;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.3s ease;
 }
 
-.btn--remove {
-	cursor: pointer;
-	background-color: transparent;
+.button-70:hover {
+	background-color: #4b8c42;
 }
 
+.btn--remove,
 .btn--delete {
-	margin-left: 10px;
 	cursor: pointer;
 	background-color: transparent;
+	color: #ff5c5c;
+	border: none;
+	font-size: 1.2rem;
+	transition: color 0.3s ease;
+}
+
+.btn--remove:hover,
+.btn--delete:hover {
+	color: #ff0000;
 }

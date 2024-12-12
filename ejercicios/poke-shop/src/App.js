@@ -1,4 +1,4 @@
-import { FetchingPokeProvider } from './context/FetchingPokemon';
+import { FetchingPokeProvider } from './context/FetchingPokemon'
 import { PokeList } from './components/PokeList'
 import './App.css';
 
@@ -12,14 +12,10 @@ function App() {
           <br />
           (de Pokemon, no de poke hawaiano)
         </h1>
-        
       </header>
-      <hr />
       <PokeList />
     </FetchingPokeProvider>
   );
 }
 
 export default App;
-
-/*  */
