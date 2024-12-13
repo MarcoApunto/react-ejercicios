@@ -12,7 +12,7 @@ export function ActualPokemon({ pokemon, addToCart }) {
     <>
       <div className="cover-img">
         <img
-          src={pokemon.sprites ? pokemon.sprites.other.home.front_default : "/imgs/img_not_available.png"}
+          src={pokemon.sprites ? pokemon.sprites.other.home.front_shiny : "/imgs/img_not_available.png"}
           alt={pokemon.name}
         />
       </div>

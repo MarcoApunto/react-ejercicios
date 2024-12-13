@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ActualPokemon } from "./ActualPokemon";
-import { FetchingPokeContext } from "../context/FetchingPokemon";
-import { releaseOne } from '../utils/cartFunctions'
+import { FetchingPokeContext } from "../../context/FetchingPokemon";
+import { releaseOne } from '../../utils/cartFunctions'
 
 export function PokeList() {
   const { pokemonList } = useContext(FetchingPokeContext);
