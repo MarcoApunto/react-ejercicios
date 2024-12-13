@@ -7,7 +7,7 @@ export const FetchingPokeProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchPokemonList = async () => {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=493&limit=7`);
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon?offset=493&limit=10`);
       const data = await res.json();
 
       const pokemonDetails = await Promise.all(

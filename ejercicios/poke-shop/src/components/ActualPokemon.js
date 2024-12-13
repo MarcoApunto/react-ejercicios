@@ -16,7 +16,7 @@ export function ActualPokemon({ pokemon, addToCart }) {
           alt={pokemon.name}
         />
       </div>
-      <h2>{pokemon.name} - {price}€</h2>
+      <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)} - {price}€</h2>
       <button className="button-70" onClick={() => addToCart(pokemon, price)} type="button">Gotcha!</button>
     </>
   );

@@ -10,10 +10,11 @@ export function PokeList() {
 
   const handleAddToproductList = (addToCart, price) => {
     let newCart
-    if (cart.find(prod => prod.pokemon === addToCart.name)) {
-      newCart = cart.map(elem => elem.pokemon === addToCart.name ? { ...elem, quantity: elem.quantity + 1 } : elem)
+    let pokeNameCap = (addToCart.name.charAt(0).toUpperCase() + addToCart.name.slice(1)) 
+    if (cart.find(prod => prod.pokemon === pokeNameCap)) {
+      newCart = cart.map(elem => elem.pokemon === pokeNameCap ? { ...elem, quantity: elem.quantity + 1 } : elem)
     } else {
-      newCart = [...cart, { pokemon: addToCart.name, quantity: 1, price: price }]
+      newCart = [...cart, { pokemon: pokeNameCap, quantity: 1, price: price }]
     }
     setCart(newCart)
   }

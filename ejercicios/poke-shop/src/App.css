@@ -21,12 +21,6 @@ h1 {
 
 }
 
-hr {
-	border: 0;
-	border-top: 1px solid #40a839;
-	margin: 20px 0;
-}
-
 .Container {
 	display: flex;
 	flex: 1;
